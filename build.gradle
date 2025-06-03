@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.5.20'
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.20'
+    id 'application'
 }
 
 group 'intro-coroutines'
@@ -56,4 +57,9 @@ sourceSets {
     main.kotlin.srcDirs = ['src']
     main.resources.srcDirs = ['resources']
     test.kotlin.srcDirs = ['test']
+}
+
+application {
+    mainClass = 'contributors.MainKt'
+    applicationDefaultJvmArgs = ['-Dkotlinx.coroutines.debug']
 }
